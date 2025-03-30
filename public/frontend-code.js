@@ -1,5 +1,5 @@
 // This is how you would update the handleSubmit function in your React component
-// to point to the Netlify deployed function
+// to point to the Netlify function
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -7,9 +7,8 @@ const handleSubmit = async (e) => {
   setSubmitError(null);
   
   try {
-    // Replace YOUR_NETLIFY_URL with your actual Netlify URL after deployment
-    // For example: https://canvas-landing-page.netlify.app/api/users
-    const response = await fetch('https://YOUR_NETLIFY_URL/api/users', {
+    // Use the direct function URL for better reliability
+    const response = await fetch('https://resplendent-strudel-d7b326.netlify.app/.netlify/functions/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

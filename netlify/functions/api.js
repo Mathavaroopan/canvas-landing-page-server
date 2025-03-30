@@ -90,6 +90,8 @@ router.post('/users', async (req, res) => {
   }
 });
 
+// This is important - this is the path that Netlify functions use
 app.use('/.netlify/functions/api', router);
 
+// This is also needed to handle the root function URL directly
 module.exports.handler = serverless(app); 
